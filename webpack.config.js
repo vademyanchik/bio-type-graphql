@@ -1,24 +1,37 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  entry: './src/index.ts',
+  mode: "production",
+  devtool: "source-map",
+  entry: './client/src/index.tsx',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        include: [path.resolve(__dirname, 'src')],
-        use: 'ts-loader',
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       }
     ]
   },
-  resolve: {
-    extensions: ['.ts', '.js']
-  },
   output: {
-    publicPath: 'public',
+    publicPath: 'client/public',
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'client/public'),
   },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM"
+  }
 };

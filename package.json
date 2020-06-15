@@ -5,11 +5,30 @@
   "repository": "git@github.com:vademyanchik/bio-type-graphql.git",
   "author": "Vadzim Dziamianchyk",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "server": "webpack-dev-server",
     "build": "webpack"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "apollo-boost": "^0.4.9",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "graphql": "^15.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "source-map-loader": "^1.0.0",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5",
     "webpack": "^4.43.0",

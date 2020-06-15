@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "no-console": 1,
+    "react-hooks/rules-of-hooks": "error",
+    "prettier/prettier": 2
+  },
+  "overrides": [{
+    "files": ["*.js"],
+    "rules": {
+      "@typescript-eslint/no-var-requires": "off"
+    }
+  }]
+}
